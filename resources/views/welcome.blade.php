@@ -67,7 +67,7 @@
 							magna aliqua.
 						</p>
 						<p class="fw-semibold mt-5">
-							<i class="bi bi-clock"></i> 1 JAM 30 MINIT
+							<i class="bi bi-clock"></i> 30 - 45 MINIT
 						</p>
 						<p class="display-4 fw-bold">RM10.00</p>
 						<a class="btn btn-primary mt-5" href="">BOOK NOW</a>
@@ -81,7 +81,7 @@
 							magna aliqua.
 						</p>
 						<p class="fw-semibold mt-5">
-							<i class="bi bi-clock"></i> 1 JAM 30 MINIT
+							<i class="bi bi-clock"></i> 30 MINIT
 						</p>
 						<p class="display-4 fw-bold">RM10.00</p>
 						<a class="btn btn-primary my-5" href="">BOOK NOW</a>
