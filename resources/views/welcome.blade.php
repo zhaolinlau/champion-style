@@ -245,7 +245,7 @@
 			</div>
 		</div>
 
-		<div class="row mt-5 pt-5">
+		<div class="row mt-5 pt-5 mb-5">
 			<div class="col-12">
 				<h1 class="fw-bold">BOOK YOUR APPOINTMENT TODAY</h1>
 			</div>
@@ -259,6 +259,7 @@
 				<div class="col-12 mt-5">
 					<a class="btn btn-primary" href="">BOOK NOW</a>
 				</div>
+			</div>
 		</div>
 	</div>
 @endsection

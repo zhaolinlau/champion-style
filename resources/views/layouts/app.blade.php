@@ -106,12 +106,93 @@
 				</nav>
 			@endguest
 			@yield('content')
+			<footer class="bg-dark text-white pt-5 pb-5">
+				<div class="container mt-5">
+					<div class="row">
+						<div class="col-lg-3 col-sm-12">
+							<img class="img-fluid" style="max-width: 136px" src="/img/champion_style.png" alt="champion_style.png">
+							<p class="mt-3"> Open Everyday 10:00AM - 10:00PM </p>
+							<p> Friday 3:00PM - 11:00PM </p>
+						</div>
+
+						<div class="col-lg-3 col-sm-12">
+							<div class="row">
+								<div class="col-12">
+									<b>MENU</b>
+								</div>
+								<div class="col-12 mt-4">
+									<a href="">Home</a>
+								</div>
+								<div class="col-12 mt-3">
+									<a href="">About</a>
+								</div>
+								<div class="col-12 mt-3">
+									<a href="">Shop</a>
+								</div>
+								<div class="col-12 mt-3">
+									<a href="">Contact</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-lg-3 col-sm-12">
+							<div class="row">
+								<div class="col-12">
+									<b>CONTACT</b>
+								</div>
+								<div class="col-12 mt-4">
+									<div class="row">
+										<div class="col-1">
+											<i class="bi bi-geo-alt"></i>
+										</div>
+										<div class="col-11">
+											No 15, Bangunan Pasdec Jalan Satria 26600 Pekan Pahang
+										</div>
+									</div>
+								</div>
+								<div class="col-12 mt-3">
+									<div class="row">
+										<div class="col-1">
+											<i class="bi bi-envelope"></i>
+										</div>
+										<div class="col-11">
+											championstyleempire@gmail.com
+										</div>
+									</div>
+								</div>
+								<div class="col-12 mt-3">
+									<div class="row">
+										<div class="col-1">
+											<i class="bi bi-telephone"></i>
+										</div>
+										<div class="col-11">
+											+60129091581
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-lg-3 col-sm-12">
+							<div class="row">
+								<div class="col-12">
+									<b>SOCIAL MEDIA</b>
+								</div>
+								<div class="col-12 mt-4">
+									<a class="btn btn-primary" href=""><i class="bi bi-facebook"></i></a>
+									<a class="btn btn-primary" href=""><i class="bi bi-instagram"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</footer>
+			<button type="button" class="btn btn-primary" id="btn-back-to-top">
+				<i class="bi bi-chevron-up"></i>
+			</button>
 		</main>
 	</div>
 
-	<button type="button" class="btn btn-primary" id="btn-back-to-top">
-		<i class="bi bi-chevron-up"></i>
-	</button>
 
 	<script>
 		var Tawk_API = Tawk_API || {},
