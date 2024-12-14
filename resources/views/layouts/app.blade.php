@@ -72,11 +72,11 @@
 				</nav>
 			@endauth
 
-			@guest
+			@if (!auth()->guard()->check())
 				<nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
 					<div class="container">
 						<a class="navbar-brand" href="{{ url('/') }}">
-							<img src="img/champion_style.png" alt="champion_style.png" width="83px">
+							<img src="/img/champion_style.png" alt="champion_style.png" width="83px">
 						</a>
 						<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
 							aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -95,7 +95,7 @@
 									<a class="nav-link" href="">Shop</a>
 								</li>
 								<li class="nav-item mx-3">
-									<a class="nav-link" href="">Contact</a>
+									<a class="nav-link" href="{{ route('contacts.create') }}">Contact</a>
 								</li>
 								<li class="nav-item mx-3">
 									<a class="btn btn-primary" href="">Book Now</a>
@@ -104,7 +104,8 @@
 						</div>
 					</div>
 				</nav>
-			@endguest
+			@endif
+
 			@yield('content')
 			<footer class="bg-dark text-white pt-5 pb-5">
 				<div class="container mt-5">
@@ -130,7 +131,7 @@
 									<a href="">Shop</a>
 								</div>
 								<div class="col-12 mt-3">
-									<a href="">Contact</a>
+									<a href="{{ route('contacts.create') }}">Contact</a>
 								</div>
 							</div>
 						</div>
@@ -156,7 +157,7 @@
 											<i class="bi bi-envelope"></i>
 										</div>
 										<div class="col-11">
-											championstyleempire@gmail.com
+											<a href="mailto:championstyleempire@gmail.com">championstyleempire@gmail.com</a>
 										</div>
 									</div>
 								</div>
