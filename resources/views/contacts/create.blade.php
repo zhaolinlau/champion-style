@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-	<div class="container vh-100 d-flex align-items-center">
+	<div class="container min-vh-100 d-flex align-items-center">
 		<div class="row">
-			<div class="col-8 bg-white shadow p-4">
+			<div class="col-lg-8 col-sm-12 bg-white shadow p-4">
 				<p class="fw-bold text-primary">
 					CONTACT US
 				</p>
@@ -94,6 +94,13 @@
 						<button class="btn btn-primary btn-lg" type="submit">SEND</button>
 					</div>
 				</form>
+			</div>
+
+			<div class="col-lg-4 col-sm-12">
+				<iframe
+					src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d509732.448286867!2d103.310017!3d3.521517!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cf518685913fe9%3A0xa3ab079a1ca2b234!2sChampion%20Style%20Barber%20Shop%20Pekan!5e0!3m2!1sen!2sus!4v1734168425556!5m2!1sen!2sus"
+					width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+					referrerpolicy="no-referrer-when-downgrade"></iframe>
 			</div>
 		</div>
 	</div>
