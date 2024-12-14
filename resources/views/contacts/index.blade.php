@@ -23,7 +23,7 @@
 							<td>{{ $loop->iteration }}</td>
 							<td>{{ $contact->name }}</td>
 							<td>{{ $contact->phone }}</td>
-							<td>{{ $contact->email }}</td>
+							<td><a href="mailto:{{ $contact->email }}">{{ $contact->email }}</a></td>
 							<td>
 								<textarea class="form-control" readonly>{{ $contact->message }}</textarea>
 							</td>
