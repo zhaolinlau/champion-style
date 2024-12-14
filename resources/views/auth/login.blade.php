@@ -63,6 +63,8 @@
 									{{ __('LOG IN') }}
 								</button>
 							</div>
+							
+							<a class="btn btn-light w-100 mt-3" href="{{ route('register') }}">REGISTER AN ACCOUNT</a>
 						</form>
 					</div>
 				</div>

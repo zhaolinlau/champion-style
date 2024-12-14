@@ -7,7 +7,7 @@
 
 				<div class="mb-3 text-center">
 					<a href="/">
-						<img src="img/champion_style.png" alt="champion_style.png" width="25%">
+						<img src="/img/champion_style.png" alt="champion_style.png" width="25%">
 					</a>
 				</div>
 
@@ -41,6 +41,7 @@
 							</div>
 
 							<div class="mb-0 text-end">
+								<a class="btn btn-link" href="{{ route('login') }}">Back</a>
 								<button type="submit" class="btn btn-primary">
 									{{ __('EMAIL PASSWORD RESET LINK') }}
 								</button>

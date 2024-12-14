@@ -57,6 +57,11 @@
 							<li class="nav-item mx-3">
 								<a class="btn btn-primary" href="">Book Now</a>
 							</li>
+							@if (!auth()->guard()->check())
+								<li class="nav-item mx-3">
+									<a class="btn btn-outline-dark" href="{{ route('login') }}">Login</a>
+								</li>
+							@endif
 						</ul>
 
 						<!-- Right Side Of Navbar -->
@@ -91,7 +96,7 @@
 			</nav>
 
 			@yield('content')
-			
+
 			<footer class="bg-dark text-white pt-5 pb-5">
 				<div class="container mt-5">
 					<div class="row">
