@@ -1,23 +1,19 @@
 @extends('layouts.app')
 
 @section('content')
-	<div class="container">
-		<div class="row justify-content-center py-4">
-			<div class="col-md-8">
-				<div class="card border-0 shadow-sm">
-
-					<div class="card-body">
-						<h5 class="card-title">{{ __('Dashboard') }}</h5>
-						@if (session('status'))
-							<div class="alert alert-success" role="alert">
-								{{ session('status') }}
-							</div>
-						@endif
-
-						{{ __('You are logged in!') }}
+	<div class="container vh-100 d-flex align-items-center">
+		<div class="row">
+			@if (auth()->guard()->user()->role == 'staff')
+				<div class="col">
+					<div class="card">
+						<div class="card-body">
+							<h5 class="card-title">Contacts</h5>
+							<p class="card-text">List of contact from customers/visitors.</p>
+							<a href="{{ route('contacts.index') }}" class="btn btn-primary">Navigate</a>
+						</div>
 					</div>
 				</div>
-			</div>
+			@endif
 		</div>
 	</div>
 @endsection

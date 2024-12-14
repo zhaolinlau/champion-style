@@ -32,6 +32,96 @@ class ContactSeeder extends Seeder
 				'phone' => '0114455324',
 				'message' => 'I want to pre-order a shampoo.'
 			],
+			[
+				'name'	=> 'Zack',
+				'email' => 'zack@gmail.com',
+				'phone' => '0123456789',
+				'message' => 'I want to refund.'
+			],
+			[
+				'name'	=> 'William',
+				'email' => 'william@gmail.com',
+				'phone' => '0176745788',
+				'message' => 'I want to refund.'
+			],
+			[
+				'name'	=> 'Farhan',
+				'email' => 'farhan@gmail.com',
+				'phone' => '0114455324',
+				'message' => 'I want to pre-order a shampoo.'
+			],
+			[
+				'name'	=> 'Zack',
+				'email' => 'zack@gmail.com',
+				'phone' => '0123456789',
+				'message' => 'I want to refund.'
+			],
+			[
+				'name'	=> 'William',
+				'email' => 'william@gmail.com',
+				'phone' => '0176745788',
+				'message' => 'I want to refund.'
+			],
+			[
+				'name'	=> 'Farhan',
+				'email' => 'farhan@gmail.com',
+				'phone' => '0114455324',
+				'message' => 'I want to pre-order a shampoo.'
+			],
+			[
+				'name'	=> 'Zack',
+				'email' => 'zack@gmail.com',
+				'phone' => '0123456789',
+				'message' => 'I want to refund.'
+			],
+			[
+				'name'	=> 'William',
+				'email' => 'william@gmail.com',
+				'phone' => '0176745788',
+				'message' => 'I want to refund.'
+			],
+			[
+				'name'	=> 'Farhan',
+				'email' => 'farhan@gmail.com',
+				'phone' => '0114455324',
+				'message' => 'I want to pre-order a shampoo.'
+			],
+			[
+				'name'	=> 'Zack',
+				'email' => 'zack@gmail.com',
+				'phone' => '0123456789',
+				'message' => 'I want to refund.'
+			],
+			[
+				'name'	=> 'William',
+				'email' => 'william@gmail.com',
+				'phone' => '0176745788',
+				'message' => 'I want to refund.'
+			],
+			[
+				'name'	=> 'Farhan',
+				'email' => 'farhan@gmail.com',
+				'phone' => '0114455324',
+				'message' => 'I want to pre-order a shampoo.'
+			],
+			[
+				'name'	=> 'Zack',
+				'email' => 'zack@gmail.com',
+				'phone' => '0123456789',
+				'message' => 'I want to refund.'
+			],
+			[
+				'name'	=> 'William',
+				'email' => 'william@gmail.com',
+				'phone' => '0176745788',
+				'message' => 'I want to refund.'
+			],
+			[
+				'name'	=> 'Farhan',
+				'email' => 'farhan@gmail.com',
+				'phone' => '0114455324',
+				'message' => 'I want to pre-order a shampoo.'
+			],
 		];
 
 		foreach ($contacts as $contact) {

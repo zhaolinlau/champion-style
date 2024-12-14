@@ -29,24 +29,38 @@
 <body class="h-100 bg-light">
 	<div id="app" class="h-100">
 		<main class="h-100">
-			@auth
-				<nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-					<div class="container">
-						<a class="navbar-brand" href="{{ url('/') }}">
-							{{ config('app.name') }}
-						</a>
-						<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-							aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-							<span class="navbar-toggler-icon"></span>
-						</button>
+			<nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+				<div class="container">
+					<a class="navbar-brand" href="{{ url('/') }}">
+						<img src="/img/champion_style.png" alt="champion_style.png" width="83px">
+					</a>
+					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+						aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+						<span class="navbar-toggler-icon"></span>
+					</button>
 
-						<div class="collapse navbar-collapse" id="navbarSupportedContent">
-							<!-- Left Side Of Navbar -->
-							<ul class="navbar-nav me-auto">
+					<div class="collapse navbar-collapse" id="navbarSupportedContent">
+						<!-- Left Side Of Navbar -->
+						<ul class="navbar-nav ms-auto">
+							<li class="nav-item mx-3">
+								<a class="nav-link" href="/">Home</a>
+							</li>
+							<li class="nav-item mx-3">
+								<a class="nav-link" href="">About</a>
+							</li>
+							<li class="nav-item mx-3">
+								<a class="nav-link" href="">Shop</a>
+							</li>
+							<li class="nav-item mx-3">
+								<a class="nav-link" href="{{ route('contacts.create') }}">Contact</a>
+							</li>
+							<li class="nav-item mx-3">
+								<a class="btn btn-primary" href="">Book Now</a>
+							</li>
+						</ul>
 
-							</ul>
-
-							<!-- Right Side Of Navbar -->
+						<!-- Right Side Of Navbar -->
+						@auth
 							<ul class="navbar-nav ms-auto">
 								<!-- Authentication Links -->
 								<li class="nav-item dropdown">
@@ -56,6 +70,10 @@
 									</a>
 
 									<div class="dropdown-menu dropdown-menu-end border-0 shadow" aria-labelledby="navbarDropdown">
+										<a class="dropdown-item" href="{{ route('home') }}">
+											Dashboard
+										</a>
+
 										<a class="dropdown-item" href="{{ route('logout') }}"
 											onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
 											{{ __('Log Out') }}
@@ -67,46 +85,13 @@
 									</div>
 								</li>
 							</ul>
-						</div>
+						@endauth
 					</div>
-				</nav>
-			@endauth
-
-			@if (!auth()->guard()->check())
-				<nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-					<div class="container">
-						<a class="navbar-brand" href="{{ url('/') }}">
-							<img src="/img/champion_style.png" alt="champion_style.png" width="83px">
-						</a>
-						<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-							aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-							<span class="navbar-toggler-icon"></span>
-						</button>
-
-						<div class="collapse navbar-collapse" id="navbarSupportedContent">
-							<ul class="navbar-nav ms-auto">
-								<li class="nav-item mx-3">
-									<a class="nav-link" href="/">Home</a>
-								</li>
-								<li class="nav-item mx-3">
-									<a class="nav-link" href="">About</a>
-								</li>
-								<li class="nav-item mx-3">
-									<a class="nav-link" href="">Shop</a>
-								</li>
-								<li class="nav-item mx-3">
-									<a class="nav-link" href="{{ route('contacts.create') }}">Contact</a>
-								</li>
-								<li class="nav-item mx-3">
-									<a class="btn btn-primary" href="">Book Now</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</nav>
-			@endif
+				</div>
+			</nav>
 
 			@yield('content')
+			
 			<footer class="bg-dark text-white pt-5 pb-5">
 				<div class="container mt-5">
 					<div class="row">

@@ -4,15 +4,18 @@ namespace App\Http\Controllers;
 
 use App\Models\Contact;
 use Illuminate\Http\Request;
+use Illuminate\Pagination\Paginator;
 
 class ContactController extends Controller
 {
+
 	/**
 	 * Display a listing of the resource.
 	 */
 	public function index()
 	{
-		//
+		Paginator::useBootstrap();
+		return view('contacts.index', ['contacts' => Contact::latest()->paginate(10)]);
 	}
 
 	/**
@@ -45,7 +48,7 @@ class ContactController extends Controller
 	 */
 	public function show(Contact $contact)
 	{
-		//
+		return view('contacts.show', ['contact' => $contact]);
 	}
 
 	/**
@@ -53,7 +56,7 @@ class ContactController extends Controller
 	 */
 	public function edit(Contact $contact)
 	{
-		//
+		return view('contacts.edit', ['contact' => $contact]);
 	}
 
 	/**
@@ -61,7 +64,16 @@ class ContactController extends Controller
 	 */
 	public function update(Request $request, Contact $contact)
 	{
-		//
+		$validated = $request->validate([
+			'name' => 'required',
+			'phone' => 'required|min_digits:7',
+			'email' => 'required|email',
+			'message' => 'required'
+		]);
+
+		$contact->update($validated);
+
+		return redirect()->route('contacts.show', ['contact' => $contact])->with('success', 'The contact details has been updated.');
 	}
 
 	/**
@@ -69,6 +81,8 @@ class ContactController extends Controller
 	 */
 	public function destroy(Contact $contact)
 	{
-		//
+		$contact->delete();
+
+		return redirect()->route('contacts.index');
 	}
 }
