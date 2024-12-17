@@ -95,7 +95,7 @@
 
 		<div class="row mt-5 pt-5">
 			<div class="col-sm-6 col-lg-3">
-				<img src="/img/woocommerce-placeholder-600x600.png" alt="woocommerce-placeholder-600x600.png" class="img-fluid">
+				<img src="img/woocommerce-placeholder-600x600.png" alt="woocommerce-placeholder-600x600.png" class="img-fluid">
 				<p>Uncategorized</p>
 				<h5><b>Product 1</b></h5>
 				<div>
@@ -111,7 +111,7 @@
 				</div>
 			</div>
 			<div class="col-sm-6 col-lg-3">
-				<img src="/img/woocommerce-placeholder-600x600.png" alt="woocommerce-placeholder-600x600.png" class="img-fluid">
+				<img src="img/woocommerce-placeholder-600x600.png" alt="woocommerce-placeholder-600x600.png" class="img-fluid">
 				<p>Uncategorized</p>
 				<h5><b>Product 1</b></h5>
 				<div>
@@ -127,7 +127,7 @@
 				</div>
 			</div>
 			<div class="col-sm-6 col-lg-3">
-				<img src="/img/woocommerce-placeholder-600x600.png" alt="woocommerce-placeholder-600x600.png" class="img-fluid">
+				<img src="img/woocommerce-placeholder-600x600.png" alt="woocommerce-placeholder-600x600.png" class="img-fluid">
 				<p>Uncategorized</p>
 				<h5><b>Product 1</b></h5>
 				<div>
@@ -143,7 +143,7 @@
 				</div>
 			</div>
 			<div class="col-sm-6 col-lg-3">
-				<img src="/img/woocommerce-placeholder-600x600.png" alt="woocommerce-placeholder-600x600.png" class="img-fluid">
+				<img src="img/woocommerce-placeholder-600x600.png" alt="woocommerce-placeholder-600x600.png" class="img-fluid">
 				<p>Uncategorized</p>
 				<h5><b>Product 1</b></h5>
 				<div>
@@ -162,7 +162,7 @@
 
 		<div class="row mt-5 pt-5">
 			<div class="col-lg-6 col-sm-12">
-				<img class="img-fluid" style="max-width: 544px" src="/img/433486675_993947515574975_6322663603438893601_n.jpg"
+				<img class="img-fluid" style="max-width: 544px" src="img/433486675_993947515574975_6322663603438893601_n.jpg"
 					alt="433486675_993947515574975_6322663603438893601_n.jpg">
 			</div>
 			<div class="col-lg-6 col-sm-12 d-flex align-items-center">
