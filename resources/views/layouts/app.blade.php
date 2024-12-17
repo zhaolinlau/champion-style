@@ -23,6 +23,27 @@
 			right: 20px;
 			display: none;
 		}
+		.rating {
+                direction: rtl; /* Reverse order for right-to-left */
+                unicode-bidi: bidi-override; /* Required for proper alignment */
+                font-size: 2rem; /* Size of stars */
+                display: inline-flex;
+            }
+            .star {
+                color: lightgray; /* Default star color */
+                cursor: pointer;
+                transition: color 0.2s ease;
+            }
+            .star:hover, 
+            .star:hover ~ .star {
+                color: gold; /* Color of hovered stars */
+            }
+            input[type="radio"]:checked ~ label {
+                color: gold; /* Selected star color */
+            }
+            input[type="radio"] {
+                display: none; /* Hide radio buttons */
+            }
 	</style>
 </head>
 

@@ -3,9 +3,12 @@
 use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 Route::get('/', function () {
-	return view('welcome');
+	$data['ratings'] = DB::table('rating')
+                            ->get();
+	return view('welcome', $data);
 });
 
 Auth::routes();
@@ -13,6 +16,7 @@ Auth::routes();
 // Auth::routes(['verify' => true]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::post('/submitRating', [App\Http\Controllers\HomeController::class, 'submitRating'])->name('submitRating');
 
 Route::get('/contacts/create', [ContactController::class, 'create'])->name('contacts.create');
 Route::post('/contacts', [ContactController::class, 'store'])->name('contacts.store');
