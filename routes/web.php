@@ -4,6 +4,8 @@ use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\BookingController;
+
 
 Route::get('/', function () {
 	$data['ratings'] = DB::table('rating')
@@ -20,6 +22,13 @@ Route::post('/submitRating', [App\Http\Controllers\HomeController::class, 'submi
 
 Route::get('/contacts/create', [ContactController::class, 'create'])->name('contacts.create');
 Route::post('/contacts', [ContactController::class, 'store'])->name('contacts.store');
+
+
+// Booking Routes
+//Route::get('/bookings', [BookingController::class, 'index'])->name('bookings.index'); // List all bookings
+Route::get('/bookings/create', [BookingController::class, 'create'])->name('bookings.create'); // Show booking form
+Route::post('/bookings', [BookingController::class, 'store'])->name('bookings.store');
+
 
 Route::middleware(['auth', 'role:staff'])->group(function () {
 	Route::get('/contacts', [ContactController::class, 'index'])->name('contacts.index');
