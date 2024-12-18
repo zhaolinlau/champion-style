@@ -13,6 +13,8 @@
 	<!-- Fonts -->
 	<link rel="dns-prefetch" href="//fonts.bunny.net">
 	<link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 	<!-- Scripts -->
 	@vite(['resources/sass/app.scss', 'resources/js/app.js'])
@@ -23,6 +25,36 @@
 			right: 20px;
 			display: none;
 		}
+		.out-of-stock {
+    filter: grayscale(100%);
+    opacity: 0.5;
+		}
+
+		.out-of-stock-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    z-index: 1;
+}
+
+.out-of-stock-text {
+    background: rgba(255, 0, 0, 0.7);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+
+.grayscale {
+    filter: grayscale(100%);
+}
 
 		.rating {
 			direction: rtl;
@@ -82,7 +114,15 @@
 								<a class="nav-link" href="">About</a>
 							</li>
 							<li class="nav-item mx-3">
-								<a class="nav-link" href="">Shop</a>
+								@if(auth()->check())
+                					@if(auth()->user()->role == 'staff')
+										<a class="nav-link" href="{{ route('staff.shop') }}">Shop</a>
+               						@elseif(auth()->user()->role == 'customer')
+								    	<a class="nav-link" href="{{ route('shop') }}">Shop</a>
+               						@endif
+           						@else
+									<a class="nav-link" href="{{ route('shop') }}">Shop</a>
+           						@endif
 							</li>
 							<li class="nav-item mx-3">
 								<a class="nav-link" href="{{ route('contacts.create') }}">Contact</a>
@@ -152,7 +192,15 @@
 									<a href="">About</a>
 								</div>
 								<div class="col-12 mt-3">
-									<a href="">Shop</a>
+									@if(auth()->check())
+                						@if(auth()->user()->role == 'staff')
+											<a href="{{ route('staff.shop') }}">Shop</a>
+               							@elseif(auth()->user()->role == 'customer')
+								    		<a href="{{ route('shop') }}">Shop</a>
+               							@endif
+           							@else
+										<a href="{{ route('shop') }}">Shop</a>
+           							@endif
 								</div>
 								<div class="col-12 mt-3">
 									<a href="{{ route('contacts.create') }}">Contact</a>
