@@ -7,7 +7,7 @@
 
 				<div class="mb-3 text-center">
 					<a href="/">
-						<img src="img/champion_style.png" alt="champion_style.png" width="25%">
+						<img src="{{ asset('img/champion_style.png') }}" alt="champion_style.png" width="25%">
 					</a>
 				</div>
 
@@ -63,7 +63,7 @@
 									{{ __('LOG IN') }}
 								</button>
 							</div>
-							
+
 							<a class="btn btn-light w-100 mt-3" href="{{ route('register') }}">REGISTER AN ACCOUNT</a>
 						</form>
 					</div>

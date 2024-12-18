@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class HomeController extends Controller
 {
@@ -24,5 +26,18 @@ class HomeController extends Controller
     public function index()
     {
         return view('home');
+    }
+
+    public function submitRating(Request $request)
+    {
+
+        DB::table('rating')->insert([
+            'name' => $request->name,
+            'rating' => $request->rating,
+            'review' => $request->review,
+            'created_at' => now(),
+        ]);
+
+        return redirect()->back()->with('success', 'Thank you for your rating!');
     }
 }

@@ -15,6 +15,7 @@
 	<link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 	<!-- Scripts -->
 	@vite(['resources/sass/app.scss', 'resources/js/app.js'])
 	<style>
@@ -24,7 +25,6 @@
 			right: 20px;
 			display: none;
 		}
-
 		.out-of-stock {
     filter: grayscale(100%);
     opacity: 0.5;
@@ -56,6 +56,38 @@
     filter: grayscale(100%);
 }
 
+		.rating {
+			direction: rtl;
+			/* Reverse order for right-to-left */
+			unicode-bidi: bidi-override;
+			/* Required for proper alignment */
+			font-size: 2rem;
+			/* Size of stars */
+			display: inline-flex;
+		}
+
+		.star {
+			color: lightgray;
+			/* Default star color */
+			cursor: pointer;
+			transition: color 0.2s ease;
+		}
+
+		.star:hover,
+		.star:hover~.star {
+			color: gold;
+			/* Color of hovered stars */
+		}
+
+		input[type="radio"]:checked~label {
+			color: gold;
+			/* Selected star color */
+		}
+
+		input[type="radio"] {
+			display: none;
+			/* Hide radio buttons */
+		}
 	</style>
 </head>
 
@@ -64,8 +96,8 @@
 		<main class="h-100">
 			<nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
 				<div class="container">
-					<a class="navbar-brand" href="{{ url('/') }}">
-						<img src="/img/champion_style.png" alt="champion_style.png" width="83px">
+					<a class="navbar-brand" href="{{ config('app.url') }}">
+						<img src="{{ asset('img/champion_style.png') }}" alt="champion_style.png" width="83px">
 					</a>
 					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
 						aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -76,7 +108,7 @@
 						<!-- Left Side Of Navbar -->
 						<ul class="navbar-nav ms-auto">
 							<li class="nav-item mx-3">
-								<a class="nav-link" href="/">Home</a>
+								<a class="nav-link" href="{{ config('app.url') }}">Home</a>
 							</li>
 							<li class="nav-item mx-3">
 								<a class="nav-link" href="">About</a>
@@ -142,7 +174,8 @@
 				<div class="container mt-5">
 					<div class="row">
 						<div class="col-lg-3 col-sm-12">
-							<img class="img-fluid" style="max-width: 136px" src="/img/champion_style.png" alt="champion_style.png">
+							<img class="img-fluid" style="max-width: 136px" src="{{ asset('img/champion_style.png') }}"
+								alt="champion_style.png">
 							<p class="mt-3"> Open Everyday 10:00AM - 10:00PM </p>
 							<p> Friday 3:00PM - 11:00PM </p>
 						</div>

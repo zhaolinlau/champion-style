@@ -46,7 +46,7 @@
 				<div class="row gap-5 d-flex justify-content-center">
 
 					<div class="col-sm-12 col-lg-3 rounded bg-primary-subtle px-3">
-						<img class="img-fluid rounded-3 mt-3" src="img/408142901_922358702733857_6998792124864022871_n.jpg"
+						<img class="img-fluid rounded-3 mt-3" src="{{ asset('img/408142901_922358702733857_6998792124864022871_n.jpg') }}"
 							alt="408142901_922358702733857_6998792124864022871_n.jpg">
 						<h4 class="fw-bold mt-5">Service 1</h4>
 						<p class="mt-3">
@@ -61,7 +61,7 @@
 					</div>
 
 					<div class="col-sm-12 col-lg-3 rounded bg-primary-subtle px-3">
-						<img class="img-fluid rounded-3 mt-3" src="img/408101830_922358712733856_9156578562392528642_n.jpg"
+						<img class="img-fluid rounded-3 mt-3" src="{{ asset('img/408101830_922358712733856_9156578562392528642_n.jpg') }}"
 							alt="408101830_922358712733856_9156578562392528642_n.jpg">
 						<h4 class="fw-bold mt-5">Service 2</h4>
 						<p class="mt-3">
@@ -76,7 +76,7 @@
 					</div>
 
 					<div class="col-sm-12 col-lg-3 rounded bg-primary-subtle px-3">
-						<img class="img-fluid rounded-3 mt-3" src="img/408106718_922358839400510_2836777686269972667_n.jpg"
+						<img class="img-fluid rounded-3 mt-3" src="{{ asset('img/408106718_922358839400510_2836777686269972667_n.jpg') }}"
 							alt="408106718_922358839400510_2836777686269972667_n.jpg">
 						<h4 class="fw-bold mt-5">Service 3</h4>
 						<p class="mt-3">
@@ -95,7 +95,7 @@
 
 		<div class="row mt-5 pt-5">
 			<div class="col-sm-6 col-lg-3">
-				<img src="/img/woocommerce-placeholder-600x600.png" alt="woocommerce-placeholder-600x600.png" class="img-fluid">
+				<img src="{{ asset('img/woocommerce-placeholder-600x600.png') }}" alt="woocommerce-placeholder-600x600.png" class="img-fluid">
 				<p>Uncategorized</p>
 				<h5><b>Product 1</b></h5>
 				<div>
@@ -111,7 +111,7 @@
 				</div>
 			</div>
 			<div class="col-sm-6 col-lg-3">
-				<img src="/img/woocommerce-placeholder-600x600.png" alt="woocommerce-placeholder-600x600.png" class="img-fluid">
+				<img src="{{ asset('img/woocommerce-placeholder-600x600.png') }}" alt="woocommerce-placeholder-600x600.png" class="img-fluid">
 				<p>Uncategorized</p>
 				<h5><b>Product 1</b></h5>
 				<div>
@@ -127,7 +127,7 @@
 				</div>
 			</div>
 			<div class="col-sm-6 col-lg-3">
-				<img src="/img/woocommerce-placeholder-600x600.png" alt="woocommerce-placeholder-600x600.png" class="img-fluid">
+				<img src="{{ asset('img/woocommerce-placeholder-600x600.png') }}" alt="woocommerce-placeholder-600x600.png" class="img-fluid">
 				<p>Uncategorized</p>
 				<h5><b>Product 1</b></h5>
 				<div>
@@ -143,7 +143,7 @@
 				</div>
 			</div>
 			<div class="col-sm-6 col-lg-3">
-				<img src="/img/woocommerce-placeholder-600x600.png" alt="woocommerce-placeholder-600x600.png" class="img-fluid">
+				<img src="{{ asset('img/woocommerce-placeholder-600x600.png') }}" alt="woocommerce-placeholder-600x600.png" class="img-fluid">
 				<p>Uncategorized</p>
 				<h5><b>Product 1</b></h5>
 				<div>
@@ -162,7 +162,7 @@
 
 		<div class="row mt-5 pt-5">
 			<div class="col-lg-6 col-sm-12">
-				<img class="img-fluid" style="max-width: 544px" src="/img/433486675_993947515574975_6322663603438893601_n.jpg"
+				<img class="img-fluid" style="max-width: 544px" src="{{ asset('img/433486675_993947515574975_6322663603438893601_n.jpg') }}"
 					alt="433486675_993947515574975_6322663603438893601_n.jpg">
 			</div>
 			<div class="col-lg-6 col-sm-12 d-flex align-items-center">
@@ -193,54 +193,77 @@
 			</div>
 			<div class="col-12">
 				<h1 class="fw-bold mt-3">
-					CLIENT FEEDBACK AND REVIEWS
+					CLIENT FEEDBACK AND REVIEWS <i class="bi bi-pencil-square" data-bs-toggle="modal" data-bs-target="#feedback" style="cursor: pointer;"></i>
 				</h1>
 			</div>
 
+			<div class="modal fade" id="feedback" tabindex="-1" role="dialog" aria-labelledby="feedbackLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                  <div class="modal-content">
+					<div class="modal-body">
+						<form id="reviewform" class="mb-3" action="{{ route('submitRating') }}" method="POST">
+						@csrf
+							<label for="name" class="form-label">Name</label>
+							<input
+								type="text"
+								class="form-control"
+								id="name"
+								name="name"
+								style="border-radius: 10px;"
+							/>
+							<label for="rating" class="form-label">Your Rating :</label>
+							<div class="rating">
+								<input type="radio" name="rating" id="rating-5" value="5">
+								<label for="rating-5" class="star">&#9733;</label>
+								<input type="radio" name="rating" id="rating-4" value="4">
+								<label for="rating-4" class="star">&#9733;</label>
+								<input type="radio" name="rating" id="rating-3" value="3">
+								<label for="rating-3" class="star">&#9733;</label>
+								<input type="radio" name="rating" id="rating-2" value="2">
+								<label for="rating-2" class="star">&#9733;</label>
+								<input type="radio" name="rating" id="rating-1" value="1">
+								<label for="rating-1" class="star">&#9733;</label>
+							</div>
+							<br>
+							<label for="review" class="form-label">Your Review :</label>
+							<textarea
+								type="text"
+								class="form-control"
+								id="review"
+								name="review"
+								style="border-radius: 10px;"
+							></textarea>
+							<button type="submit" class="btn mt-4" style="background-color: #a97c2a !important; color: #ffffff; border-radius: 15%"><i class="bi bi-image"></i></button>
+							<div class="mt-4">
+								<button type="button" class="btn" style="background-color: #b4b4b4 !important; color: #ffffff; border-radius: 10px; width: 15%" data-bs-dismiss="modal">Cancel</button>
+								<button type="submit" class="btn" style="background-color: #a97c2a !important; color: #ffffff; border-radius: 10px; width: 15%">Submit</button>
+							</div>
+						</form>
+					</div>
+                  </div>
+                </div>
+              </div>
+
 			<div class="col-12">
 				<div class="row gap-5 d-flex justify-content-center">
-					<div class="col-sm-12 col-lg-3 bg-primary-subtle rounded d-flex align-items-center" style="height: 175px">
-						<div>
-							<p><b>Zharif Ifwat</b></p>
-							<p>2024-07-14</p>
+					@foreach ($ratings as $rating)
+						<div class="col-sm-12 col-lg-3 bg-primary-subtle rounded d-flex align-items-center" style="height: 175px">
 							<div>
-								<i class="bi bi-star"></i>
-								<i class="bi bi-star"></i>
-								<i class="bi bi-star"></i>
-								<i class="bi bi-star"></i>
-								<i class="bi bi-star"></i>
+								<p><b>{{ $rating->name }}</b></p>
+								<p>{{ $rating->created_at }}</p>
+								<div>
+									@for ($i = 1; $i <= 5; $i++)
+										@if ($i <= $rating->rating)
+											&#9733;
+										@else
+											&#9734;
+										@endif
+									@endfor
+								</div>
+								<p>{{ $rating->review }}</p>
 							</div>
-							<p>good experience, barber peramah, nice 👍🏻</p>
 						</div>
-					</div>
-					<div class="col-sm-12 col-lg-3 bg-primary-subtle rounded d-flex align-items-center" style="height: 175px">
-						<div>
-							<p><b>Zharif Ifwat</b></p>
-							<p>2024-07-14</p>
-							<div>
-								<i class="bi bi-star"></i>
-								<i class="bi bi-star"></i>
-								<i class="bi bi-star"></i>
-								<i class="bi bi-star"></i>
-								<i class="bi bi-star"></i>
-							</div>
-							<p>good experience, barber peramah, nice 👍🏻</p>
-						</div>
-					</div>
-					<div class="col-sm-12 col-lg-3 bg-primary-subtle rounded d-flex align-items-center" style="height: 175px">
-						<div>
-							<p><b>Zharif Ifwat</b></p>
-							<p>2024-07-14</p>
-							<div>
-								<i class="bi bi-star"></i>
-								<i class="bi bi-star"></i>
-								<i class="bi bi-star"></i>
-								<i class="bi bi-star"></i>
-								<i class="bi bi-star"></i>
-							</div>
-							<p>good experience, barber peramah, nice 👍🏻</p>
-						</div>
-					</div>
+					@endforeach
 				</div>
 			</div>
 		</div>
