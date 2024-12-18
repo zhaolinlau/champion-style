@@ -53,7 +53,7 @@
 			<nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
 				<div class="container">
 					<a class="navbar-brand" href="{{ url('/') }}">
-						<img src="img/champion_style.png" alt="champion_style.png" width="83px">
+						<img src="{{ asset('img/champion_style.png') }}" alt="champion_style.png" width="83px">
 					</a>
 					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
 						aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -122,7 +122,7 @@
 				<div class="container mt-5">
 					<div class="row">
 						<div class="col-lg-3 col-sm-12">
-							<img class="img-fluid" style="max-width: 136px" src="img/champion_style.png" alt="champion_style.png">
+							<img class="img-fluid" style="max-width: 136px" src="{{ asset('img/champion_style.png') }}" alt="champion_style.png">
 							<p class="mt-3"> Open Everyday 10:00AM - 10:00PM </p>
 							<p> Friday 3:00PM - 11:00PM </p>
 						</div>
