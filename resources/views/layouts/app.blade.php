@@ -13,6 +13,7 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
@@ -24,6 +25,32 @@
             display: none;
         }
 
+        		.out-of-stock-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    z-index: 1;
+}
+
+.out-of-stock-text {
+    background: rgba(255, 0, 0, 0.7);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+
+.grayscale {
+    filter: grayscale(100%);
+}
+        
         .rating {
             direction: rtl;
             /* Reverse order for right-to-left */
@@ -55,6 +82,11 @@
         input[type="radio"] {
             display: none;
             /* Hide radio buttons */
+
+
+        
+
+            
         }
     </style>
 </head>
