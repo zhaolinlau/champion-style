@@ -83,7 +83,15 @@
                                 <a class="nav-link" href="">About</a>
                             </li>
                             <li class="nav-item mx-3">
-                                <a class="nav-link" href="">Shop</a>
+                               @if(auth()->check())
+                					@if(auth()->user()->role == 'staff')
+										<a class="nav-link" href="{{ route('staff.shop') }}">Shop</a>
+               						@elseif(auth()->user()->role == 'customer')
+								    	<a class="nav-link" href="{{ route('shop') }}">Shop</a>
+               						@endif
+           						@else
+									<a class="nav-link" href="{{ route('shop') }}">Shop</a>
+           						@endif
                             </li>
                             <li class="nav-item mx-3">
                                 <a class="nav-link" href="{{ route('contacts.create') }}">Contact</a>
@@ -155,7 +163,15 @@
                                     <a href="">About</a>
                                 </div>
                                 <div class="col-12 mt-3">
-                                    <a href="">Shop</a>
+                                    @if(auth()->check())
+                						@if(auth()->user()->role == 'staff')
+											<a href="{{ route('staff.shop') }}">Shop</a>
+               							@elseif(auth()->user()->role == 'customer')
+								    		<a href="{{ route('shop') }}">Shop</a>
+               							@endif
+           							@else
+										<a href="{{ route('shop') }}">Shop</a>
+           							@endif
                                 </div>
                                 <div class="col-12 mt-3">
                                     <a href="{{ route('contacts.create') }}">Contact</a>
